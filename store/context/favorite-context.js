@@ -14,7 +14,9 @@ function FavoritesContextProvider({ children }) {
   }
 
   function removeFavorite(id) {
-    setFavoriteMealIds((currentFavIds) => currentFavIds.filter(mealId !== id));
+    setFavoriteMealIds((currentFavIds) =>
+      currentFavIds.filter((mealId) => mealId !== id)
+    );
   }
 
   const value = {
@@ -24,9 +26,9 @@ function FavoritesContextProvider({ children }) {
   };
 
   return (
-    <FavoritesContext.Provider value={value}>
+    <FavoriteContext.Provider value={value}>
       {children}
-    </FavoritesContext.Provider>
+    </FavoriteContext.Provider>
   );
 }
 
